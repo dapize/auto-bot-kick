@@ -46,8 +46,8 @@ const ifKickABot = (data) => {
 };
 
 const kickABot = (data) => {
-  log.info("Votando al BOT: " + firstBot);
   const firstBot = data.bots[0];
+  log.info("Votando al BOT: " + firstBot);
   client.send("kick " + firstBot);
 };
 
