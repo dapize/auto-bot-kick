@@ -1,0 +1,29 @@
+{
+  "name": "auto-bot-kick",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node --no-warnings index"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dapize/auto-bot-kick.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dapize/auto-bot-kick/issues"
+  },
+  "homepage": "https://github.com/dapize/auto-bot-kick#readme",
+  "dependencies": {
+    "npmlog": "^7.0.1",
+    "rcon": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.1",
+    "dotenv": "^16.0.3"
+  }
+}
