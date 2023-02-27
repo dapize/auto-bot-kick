@@ -47,7 +47,7 @@ const ifKickABot = (data) => {
 
 const kickABot = (data) => {
   const firstBot = data.bots[0];
-  log.info("Votando al BOT: " + firstBot);
+  log.info(`${new Date()} - Votando al BOT: ${firstBot}`);
   client.send("kick " + firstBot);
 };
 
@@ -60,7 +60,7 @@ const check = (str) => {
     if (ifKickABot(data)) {
       kickABot(data);
     } else {
-      log.info("No hay que votar ningun BOT");
+      log.info(`${new Date()} - No hay que votar ningun BOT`);
     }
   }
 
@@ -69,7 +69,9 @@ const check = (str) => {
     client.disconnect();
   }, 2000);
   const timeOut = Number(process.env.INTERVAL) * 1000;
-  log.info(`Volviendo a rebizar en ${process.env.INTERVAL} segundos...`);
+  log.info(
+    `${new Date()} - Volviendo a rebizar en ${process.env.INTERVAL} segundos...`
+  );
   setTimeout(() => {
     client.connect();
   }, timeOut);
@@ -78,7 +80,7 @@ const check = (str) => {
 // Init
 client
   .on("auth", () => {
-    log.info("RCON conectado");
+    log.info(`${new Date()} - RCON conectado`);
     client.send("status");
   })
   .on("response", (str) => {
@@ -90,6 +92,6 @@ client
     process.exit();
   })
   .on("end", function () {
-    log.info("Rcon desconectado");
+    log.info(`${new Date()} - Rcon desconectado`);
   });
 client.connect();
