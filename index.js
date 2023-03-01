@@ -89,6 +89,7 @@ client
   .on("error", (err) => {
     log.error(err);
     client.disconnect();
+    log.info(`${new Date()} - Leaving the process`);
     process.exit();
   })
   .on("end", function () {
