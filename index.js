@@ -68,13 +68,13 @@ const check = (str) => {
   setTimeout(() => {
     client.disconnect();
   }, 2000);
-  const timeOut = Number(process.env.INTERVAL) * 1000;
   log.info(
     `${new Date()} - Volviendo a rebizar en ${process.env.INTERVAL} segundos...`
   );
   setTimeout(() => {
+    log.info(`${new Date()} - Intentando conectar...`);
     client.connect();
-  }, timeOut);
+  }, Number(process.env.INTERVAL) * 1000);
 };
 
 // Init
