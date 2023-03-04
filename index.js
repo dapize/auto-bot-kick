@@ -53,15 +53,21 @@ const kickABot = (data) => {
 
 const check = (str) => {
   const data = getData(str);
-  if (!data) return false;
+  if (!data) {
+    log.error(`${new Date()} - No se pudo obtener la data`);
+    return false;
+  }
 
   // checking for add or remove a bot
   if (data.bots.length) {
+    log.info(`${new Date()} - BOTS: ${JSON.stringify(data.bots)}`);
     if (ifKickABot(data)) {
       kickABot(data);
     } else {
-      log.info(`${new Date()} - No hay que votar ningun BOT`);
+      log.info(`${new Date()} - No hay que votar ningun BOT.`);
     }
+  } else {
+    log.info(`${new Date()} - No hay BOTS disponibles`);
   }
 
   // reinit
