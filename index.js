@@ -58,6 +58,10 @@ const check = (str) => {
     return false;
   }
 
+  log.info(
+    `${new Date()} - BOTS: ${data.bots.length} | HUMANS: ${data.humans.length}`
+  );
+
   // checking for add or remove a bot
   if (data.bots.length) {
     log.info(`${new Date()} - BOTS: ${JSON.stringify(data.bots)}`);
