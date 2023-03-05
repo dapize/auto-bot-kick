@@ -23,10 +23,12 @@ const getData = (str) => {
     let bots = [],
       humans = [];
     players.forEach((player) => {
-      const name = player.split(" ")[2];
-      const realName = name.substring(1, name.length - 1);
-      const vault = player.includes("BOT") ? bots : humans;
-      vault.push(realName);
+      const firstQuation = player.indexOf('"');
+      const secondQuation = player.indexOf('"', firstQuation + 1);
+      const name = player.substring(firstQuation + 1, secondQuation);
+      const type = player.substring(secondQuation + 1).split(" ")[2];
+      const vault = type === "BOT" ? bots : humans;
+      vault.push(name);
     });
     return {
       humans,
