@@ -53,6 +53,8 @@ const kickABot = (data) => {
   client.send("kick " + firstBot);
 };
 
+let timeOutConecting;
+
 const check = (str) => {
   const data = getData(str);
   if (!data) {
@@ -83,7 +85,7 @@ const check = (str) => {
   log.info(
     `${new Date()} - Volviendo a rebizar en ${process.env.INTERVAL} segundos...`
   );
-  setTimeout(() => {
+  timeOutConecting = setInterval(() => {
     log.info(`${new Date()} - Intentando conectar...`);
     client.connect();
   }, Number(process.env.INTERVAL) * 1000);
@@ -92,6 +94,9 @@ const check = (str) => {
 // Init
 client
   .on("auth", () => {
+    if (timeOutConecting) {
+      clearInterval(timeOutConecting);
+    }
     log.info(`${new Date()} - RCON conectado`);
     client.send("status");
   })
