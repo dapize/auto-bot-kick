@@ -31,17 +31,14 @@ yarn start
 Obtendremos un resultado en la consola así:
 
 ```bash
-info No hay que votar ningun BOT
-info Volviendo a rebizar en 30 segundos...
-info Rcon desconectado
-info RCON conectado
-info No hay que votar ningun BOT
-info Volviendo a rebizar en 30 segundos...
-info Rcon desconectado
-info RCON conectado
-info No hay que votar ningun BOT
-info Volviendo a rebizar en 30 segundos...
-info Rcon desconectado
+info Sat Mar 11 2023 02:43:38 GMT-0500 (hora estándar de Perú) - Getting data of the server 
+info Sat Mar 11 2023 02:43:38 GMT-0500 (hora estándar de Perú) - Data getted! 
+info Sat Mar 11 2023 02:43:38 GMT-0500 (hora estándar de Perú) - I have not to kick any bot 
+info Sat Mar 11 2023 02:43:38 GMT-0500 (hora estándar de Perú) - Checking again in 30 seconds... 
+info Sat Mar 11 2023 02:44:08 GMT-0500 (hora estándar de Perú) - Getting data of the server 
+info Sat Mar 11 2023 02:44:08 GMT-0500 (hora estándar de Perú) - Data getted! 
+info Sat Mar 11 2023 02:44:08 GMT-0500 (hora estándar de Perú) - I have not to kick any bot 
+info Sat Mar 11 2023 02:44:08 GMT-0500 (hora estándar de Perú) - Checking again in 30 seconds... 
 ```
 
 Básicamente es un programa que se conecta por RCON, obtiene información del server y determina si es necesario botar o no un bot, y ese chequeo lo hace cada "X" segundos, les dije que era simple :V
